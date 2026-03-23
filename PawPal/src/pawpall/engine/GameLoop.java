@@ -20,7 +20,8 @@ public class GameLoop extends AnimationTimer {
     private void update() {
         // Future: Update physics and input here
     }
-
+    
+    //error as renderer has not been implemented yet 
     private void render() {
         renderer.draw();
     }
