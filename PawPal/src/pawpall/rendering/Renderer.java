@@ -3,11 +3,8 @@ package pawpall.rendering;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import pawpall.player.Player;
 
-/**
- * Handles all drawing logic for Milestone 1.
- * This class translates our game objects into visuals on the Canvas.
- */
 public class Renderer {
     private Canvas canvas;
     private GraphicsContext gc;
@@ -17,24 +14,16 @@ public class Renderer {
         this.gc = canvas.getGraphicsContext2D();
     }
 
-    /**
-     * The draw method called by GameLoop.
-     * For Milestone 1, it clears the screen and draws test placeholders.
-     */
-    public void draw() {
-        // 1. Clear the screen (Background)
+    public void draw(Player cat, Player dog) {
         gc.setFill(Color.BLACK);
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
-        // 2. Draw Player 1 (Cat) - Orange Placeholder
+        // Draw Cat
         gc.setFill(Color.ORANGE);
-        gc.fillRect(100, 100, 32, 32); 
+        gc.fillRect(cat.getPosition().x, cat.getPosition().y, 32, 32);
 
-        // 3. Draw Player 2 (Dog) - Brown Placeholder
+        // Draw Dog
         gc.setFill(Color.BROWN);
-        gc.fillRect(200, 100, 40, 40); // Dog is slightly larger as per research
-        
-        // Logic Note: Using hardcoded values for Milestone 1 
-        // to verify the GameLoop and JavaFX Stage are linked correctly.
+        gc.fillRect(dog.getPosition().x, dog.getPosition().y, 40, 40);
     }
 }
