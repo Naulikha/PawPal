@@ -20,7 +20,15 @@ public class Player {
     public boolean canPushObjects() {
         return this.type == Type.DOG;
     }
-
+    //getter and setter for position 
     public Vector2 getPosition() { return position; }
     public void setPosition(Vector2 pos) { this.position = pos; }
+    
+    //getter for type 
+    public Type getType() { return type; }
+    
+    //method for movement linked to testPlayerMovement
+    public void move(Vector2 velocity) {
+        this.position = this.position.add(velocity);
+    }
 }
